@@ -18,24 +18,28 @@ public class ProductController {
 
     private final IProductService productService;
 
+    @CrossOrigin(origins = "*")
     @Operation(summary = "Metodo para Listar todos los productos")
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getProducts() {
         return ResponseEntity.ok(productService.getProducts());
     }
 
+    @CrossOrigin(origins = "*")
     @Operation(summary = "Metodo para registrar un productos")
     @PostMapping("/products")
     public ResponseEntity<Product> createProduct(@RequestBody Product product){
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.createProduct(product));
     }
 
+    @CrossOrigin(origins = "*")
     @Operation(summary = "Metodo para buscar un productos por title o brand")
     @GetMapping("/products/search")
     public List<Product> searchProducts(@RequestParam String query) {
         return productService.searchProductsByTitleOrBrand(query);
     }
 
+    @CrossOrigin(origins = "*")
     @Operation(summary = "Metodo para eliminar un producto")
     @DeleteMapping("/products/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
