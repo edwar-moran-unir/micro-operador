@@ -34,4 +34,7 @@ public class Product {
 
     @Column
     private String thumbnail;
+
+    @Column
+    private BigDecimal total;
 }
