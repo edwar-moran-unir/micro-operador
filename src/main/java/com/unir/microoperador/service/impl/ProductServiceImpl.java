@@ -23,4 +23,14 @@ public class ProductServiceImpl implements IProductService {
     public List<Product> getProducts() {
         return productRepository.findAll();
     }
+
+    @Override
+    public List<Product> searchProductsByTitleOrBrand(String searchTerm) {
+        return productRepository.findByTitleContainingOrBrandContaining(searchTerm, searchTerm);
+    }
+
+    @Override
+    public void deleteProduct(Long id) {
+        productRepository.deleteById(id);
+    }
 }
