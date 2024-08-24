@@ -17,16 +17,16 @@ import java.math.BigDecimal;
 public class Product {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(length = 200)
     private String title;
 
-    @Column
+    @Column(length = 150)
     private String category;
 
-    @Column
+    @Column(length = 100)
     private String brand;
 
     @Column
