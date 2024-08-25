@@ -9,35 +9,30 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "products")
+@Table(name = "tbl_orders")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+
+public class Order {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 200)
-    private String title;
+   @Column
+   private Long userId;
 
-    @Column(length = 150)
-    private String category;
+   @Column
+   private Long totalProducts;
 
-    @Column(length = 100)
-    private String brand;
+   @Column
+    private BigDecimal discountedTotal;
 
-    @Column
-    private BigDecimal price;
 
-    @Column
-    private String thumbnail;
-
-    @Column
+   @Column
     private BigDecimal total;
 
-    // @Column
-    // private BigDecimal discountedTotal;
+
 }
