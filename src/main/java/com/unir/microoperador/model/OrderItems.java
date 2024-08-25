@@ -44,6 +44,10 @@ public class OrderItems {
     @Column
     private BigDecimal total;
 
+   @Column
+   private BigDecimal discountPercentage; 
+
     @Column
     private BigDecimal discountedTotal;
-}
+
+ }
